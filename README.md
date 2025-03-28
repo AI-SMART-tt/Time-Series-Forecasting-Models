@@ -3,15 +3,6 @@ This work examines key time series forecasting models spanning classical to deep
 
 ---
 
-✅ 分类：
-
-- 🧠 按照年代和模型类型分类
-- 📌 每个模型提供论文链接和 GitHub 仓库（如有）
-- 🎯 使用图标美化排版
-- 🧩 包含传统模型、机器学习模型、深度学习模型、Transformer模型、混合模型等
-
----
-
 ## 📘 Time Series Forecasting Models – Full Development Timeline
 
 > ⏳ From classical statistical models to cutting-edge deep learning architectures.
