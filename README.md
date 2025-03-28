@@ -1,96 +1,92 @@
 # Time-Series-Forecasting-Models
 This work examines key time series forecasting models spanning classical to deep learning methods.
 
+---
 
-# ⏳ 时间序列预测模型发展图谱（1880s–2025s）
+✅ 分类：
 
-> 本图谱按 **模型范式分层**，结合时间序列建模的技术演化路径，展示了从 19 世纪末至今的主要模型、代表论文与开源实现。
+- 🧠 按照年代和模型类型分类
+- 📌 每个模型提供论文链接和 GitHub 仓库（如有）
+- 🎯 使用图标美化排版
+- 🧩 包含传统模型、机器学习模型、深度学习模型、Transformer模型、混合模型等
 
 ---
 
-## 🧱 1. 传统统计建模阶段（1880s – 1980s）
+## 📘 Time Series Forecasting Models – Full Development Timeline
 
-| 分类         | 代表模型                 | 代表论文 / 作者                     | GitHub链接 / 工具 |
-|--------------|--------------------------|--------------------------------------|--------------------|
-| 周期分析     | 周期图、谱分析、相关分析 | Yule (1927), Slutzky (1937)         | N/A                |
-| 分解方法     | X-11、STL、Census        | Cleveland et al. (1990)             | `statsmodels`      |
-| AR/MA模型    | AR, MA, ARMA             | Wold (1938), Box & Jenkins (1970)   | `statsmodels`      |
-| ARIMA系列    | ARIMA, SARIMA, ARIMAX    | Box & Jenkins (1970)                | [`pmdarima`](https://github.com/alkaline-ml/pmdarima) |
-| 状态空间模型 | Kalman Filter, DLM       | Kalman (1960), Durbin & Koopman     | `pydlm`, `bsts`    |
-| 指数平滑     | Holt-Winters, ETS        | Holt (1957), Winters (1960)         | `statsmodels`, `prophet` |
+> ⏳ From classical statistical models to cutting-edge deep learning architectures.
 
 ---
 
-## 🧠 2. 经典机器学习阶段（1990s – 2015）
+### 📜 Table of Contents
 
-| 分类         | 代表模型                 | 代表论文 / 作者                     | GitHub链接 / 工具 |
-|--------------|--------------------------|--------------------------------------|--------------------|
-| 支持向量机   | SVR, SVM                 | Vapnik (1995)                        | `sklearn`          |
-| 相似性方法   | KNN                      | -                                    | `sklearn`          |
-| 决策树       | CART, MARS               | Breiman et al. (1984), Friedman      | `sklearn`          |
-| 集成方法     | Bagging, AdaBoost        | Breiman (1996), Freund & Schapire    | `sklearn`          |
-| Boosting     | XGBoost, LightGBM        | Chen & Guestrin (2016), Ke et al.    | [`xgboost`](https://github.com/dmlc/xgboost), [`lightgbm`](https://github.com/microsoft/LightGBM) |
-| 多项式回归   | MARS                     | Friedman (1991)                      | `py-earth`         |
+1. [📊 Traditional Statistical Models](#-traditional-statistical-models)
+2. [🧠 Machine Learning-based Models](#-machine-learning-based-models)
+3. [🤖 Deep Learning Models](#-deep-learning-models)
+4. [🧮 Hybrid & Ensemble Models](#-hybrid--ensemble-models)
+5. [🔮 Transformer-based Models](#-transformer-based-models)
+6. [📈 Recent Advances & Foundation Models](#-recent-advances--foundation-models)
 
 ---
 
-## 🔥 3. 深度学习阶段（2015 – 2019）
+## 📊 Traditional Statistical Models
 
-| 分类         | 代表模型                 | 代表论文 / 作者                     | GitHub链接 / 工具 |
-|--------------|--------------------------|--------------------------------------|--------------------|
-| 循环神经网络 | RNN, LSTM, GRU           | Hochreiter & Schmidhuber (1997)     | `keras`, `pytorch` |
-| 卷积网络     | TCN, 1D-CNN              | Bai et al. (2018)                   | `pytorch`, `keras` |
-| 编码解码结构 | Seq2Seq, Attention RNN   | Sutskever et al. (2014)             | `OpenNMT`, `Fairseq` |
-| 多步预测     | DeepAR, DeepVAR          | Salinas et al. (2019)               | [`gluon-ts`](https://github.com/awslabs/gluon-ts) |
-| 可解释建模   | N-BEATS, InterpretableML | Oreshkin et al. (2020)              | [`n-beats`](https://github.com/philipperemy/n-beats) |
-| 状态空间DL   | DeepState                | Rangapuram et al. (2018)            | `gluon-ts`         |
-
----
-
-## ⚡ 4. Transformer & 结构创新阶段（2019 – 2022）
-
-| 分类         | 代表模型                 | 代表论文 / 作者                     | GitHub链接 |
-|--------------|--------------------------|--------------------------------------|------------|
-| 注意力机制   | Transformer              | Vaswani et al. (2017)               | `huggingface` |
-| 高效长序建模 | Informer                 | Zhou et al. (2021, AAAI)            | [Informer2020](https://github.com/zhouhaoyi/Informer2020) |
-| 趋势建模     | Autoformer               | Wu et al. (2021, NeurIPS)           | [Autoformer](https://github.com/thuml/Autoformer) |
-| 频域建模     | FEDformer                | Zhou et al. (2022)                  | [FEDformer](https://github.com/MAZiqing/FEDformer) |
-| 分块建模     | PatchTST                 | Nie et al. (2023)                   | [PatchTST](https://github.com/yuqinie98/PatchTST) |
-| 多尺度建模   | TimesNet                 | Wu et al. (2023, ICLR)              | [TimesNet](https://github.com/thuml/TimesNet) |
-| 混合结构     | TFT                     | Lim et al. (2021, JMLR)             | [Temporal Fusion Transformer](https://github.com/jdb78/pytorch-forecasting) |
-| 稀疏建模     | LogTrans, Reformer       | Li et al., Kitaev et al.            | 多实现      |
+| Model | Year | Paper | GitHub |
+|-------|------|-------|--------|
+| 🔢 AR (AutoRegression) | 1920s | N/A | N/A |
+| 🧮 MA (Moving Average) | 1920s | N/A | N/A |
+| 🔁 ARMA | 1951 | [Wold, 1951](https://projecteuclid.org/euclid.aoms/1177729432) | [Statsmodels](https://github.com/statsmodels/statsmodels) |
+| 🔄 ARIMA | 1970 | [Box-Jenkins, 1970](https://www.wiley.com/en-us/Time+Series+Analysis%3A+Forecasting+and+Control%2C+Revised+Edition-p-9781118675021) | [pmdarima](https://github.com/alkaline-ml/pmdarima) |
+| 🎚️ SARIMA | 1976 | [Box-Jenkins Seasonal](https://www.wiley.com/en-us/Time+Series+Analysis%3A+Forecasting+and+Control%2C+Revised+Edition-p-9781118675021) | [Statsmodels](https://github.com/statsmodels/statsmodels) |
+| 📏 Exponential Smoothing (ETS, Holt-Winters) | 1957+ | [Holt’s Linear Trend Model](https://doi.org/10.2307/3001644) | [Statsmodels ETS](https://github.com/statsmodels/statsmodels) |
+| ⛅ State Space Models / Kalman Filters | 1960 | [Kalman, 1960](https://onlinelibrary.wiley.com/doi/abs/10.1002/j.1538-7305.1960.tb03958.x) | [pykalman](https://github.com/pykalman/pykalman) |
 
 ---
 
-## 🔍 5. 自监督 & 图结构建模阶段（2021 – 2023）
+## 🧠 Machine Learning-based Models
 
-| 分类         | 代表模型                 | 代表论文 / 作者                     | GitHub链接 |
-|--------------|--------------------------|--------------------------------------|------------|
-| 表征学习     | TS2Vec                   | Wu et al. (2021)                    | [TS2Vec](https://github.com/yuezhihan/ts2vec) |
-| 对比学习     | CoST, TNC, CPC-TSC       | Franceschi et al. (2020), Wang et al.| 多仓库     |
-| 图神经网络   | DCRNN, STGNN, GraphWaveNet | Li et al. (2018), Wu et al.         | 多实现     |
-| 缺失值建模   | CSDI                     | Tashiro et al.                      | [CSDI](https://github.com/HySonLab/csdi-pytorch) |
-
----
-
-## 🚀 6. 大模型 & 前沿模型阶段（2023 – 2025）
-
-| 分类         | 代表模型                 | 代表论文 / 作者                     | GitHub链接 |
-|--------------|--------------------------|--------------------------------------|------------|
-| LLM for TS   | TimeGPT                  | Nixtla (2023)                        | [TimeGPT](https://github.com/Nixtla/TimeGPT) |
-| 微调大模型   | Chronos                  | Microsoft (2023)                     | [Chronos](https://github.com/microsoft/chronos) |
-| 多模态时序   | MM-TS, CM-TS             | 结合文本/图像/传感器                | N/A        |
-| 自适应建模   | Nonstationary Transf.    | Wu et al. (2023)                     | [NonstationaryTransformer](https://github.com/thuml/Nonstationary_Transformers) |
-| Koopman建模  | Koopformer               | Gao et al. (2023)                    | [Koopformer](https://github.com/LongxingTan/Koopformer) |
-| 混合专家模型 | MoE for Time Series      | Google Brain (2023)                  | 多实现     |
-| 记忆增强     | MemoryTS, RETAIN         | Choi et al. (2016)                   | 多实现     |
-| 时间因子LLM  | Lag-Llama                | Meta (2024)                          | 待开源     |
+| Model | Year | Paper | GitHub |
+|-------|------|-------|--------|
+| 🌳 Random Forest for TS | ~2000 | [ML for TS - Bontempi, 2012](https://hal.science/hal-00650910) | [sklearn](https://github.com/scikit-learn/scikit-learn) |
+| 🎯 Gradient Boosting (XGBoost, LightGBM) | 2016 | [XGBoost](https://arxiv.org/abs/1603.02754) | [XGBoost](https://github.com/dmlc/xgboost) / [LightGBM](https://github.com/microsoft/LightGBM) |
+| 🧮 SVR (Support Vector Regression) | 1997 | [SVR](https://www.isical.ac.in/~ecsu/handbook/chapters/svm.pdf) | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html) |
+| 🧠 kNN for Time Series | 2002 | [DASARATHY, 2002](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.107.716&rep=rep1&type=pdf) | [tslearn](https://github.com/tslearn-team/tslearn) |
 
 ---
 
-## 🛠 7. 工业级平台工具推荐
+## 🤖 Deep Learning Models
 
-| 工具 / 框架       | 开发者         | 链接 |
-|--------------------|----------------|------|
-| Facebook Prophet   | Meta           | [Prophet](https://github.com/facebook/prophet) |
-| NeuralProp
+| Model | Year | Paper | GitHub |
+|-------|------|-------|--------|
+| 🧠 LSTM | 1997 / popularized ~2015 | [Hochreiter & Schmidhuber, 1997](https://www.bioinf.jku.at/publications/older/2604.pdf) | [Keras LSTM](https://keras.io/api/layers/recurrent_layers/lstm/) |
+| 🔁 GRU | 2014 | [Cho et al., 2014](https://arxiv.org/abs/1406.1078) | [Keras GRU](https://keras.io/api/layers/recurrent_layers/gru/) |
+| 📉 DeepAR (Amazon) | 2017 | [DeepAR](https://arxiv.org/abs/1704.04110) | [GluonTS](https://github.com/awslabs/gluon-ts) |
+| ⛓️ LSTNet | 2018 | [LSTNet](https://arxiv.org/abs/1703.07015) | [LSTNet](https://github.com/laiguokun/LSTNet) |
+| 🔗 TCN (Temporal Convolutional Network) | 2018 | [TCN Paper](https://arxiv.org/abs/1803.01271) | [TCN GitHub](https://github.com/locuslab/TCN) |
+| 🧱 N-BEATS | 2020 | [N-BEATS](https://arxiv.org/abs/1905.10437) | [N-BEATS GitHub](https://github.com/ElementAI/N-BEATS) |
+| 📦 N-HITS | 2022 | [N-HITS](https://arxiv.org/abs/2201.12886) | [N-HiTS GitHub](https://github.com/Nixtla/neuralforecast) |
+
+---
+
+## 🧮 Hybrid & Ensemble Models
+
+| Model | Year | Paper | GitHub |
+|-------|------|-------|--------|
+| 🧪 Prophet (Facebook) | 2017 | [Prophet Paper](https://peerj.com/preprints/3190/) | [Prophet GitHub](https://github.com/facebook/prophet) |
+| 🧬 Hybrid ARIMA + ML | ~2010+ | [Zhang, 2003](https://www.sciencedirect.com/science/article/abs/pii/S0957417403001135) | Custom Implementations |
+| 🧠 AutoML for TS (AutoTS, H2O) | 2020+ | [AutoTS](https://github.com/winedarksea/AutoTS) | [AutoTS GitHub](https://github.com/winedarksea/AutoTS) |
+
+---
+
+## 🔮 Transformer-based Models
+
+| Model | Year | Paper | GitHub |
+|-------|------|-------|--------|
+| 🔮 Transformer (original) | 2017 | [Vaswani et al.](https://arxiv.org/abs/1706.03762) | [Tensor2Tensor](https://github.com/tensorflow/tensor2tensor) |
+| 🌀 Informer | 2021 | [Informer](https://arxiv.org/abs/2012.07436) | [Informer GitHub](https://github.com/zhouhaoyi/Informer2020) |
+| 🌊 Autoformer | 2021 | [Autoformer](https://arxiv.org/abs/2106.13008) | [Autoformer GitHub](https://github.com/thuml/Autoformer) |
+| ⏱️ TimesNet | 2022 | [TimesNet](https://arxiv.org/abs/2210.02186) | [TimesNet GitHub](https://github.com/thuml/TimesNet) |
+| 🧠 PatchTST | 2023 | [PatchTST](https://arxiv.org/abs/2211.14730) | [PatchTST GitHub](https://github.com/yuqinie98/PatchTST) |
+| 🔁 FEDformer | 2022 | [FEDformer](https://arxiv.org/abs/2201.12740) | [FEDformer GitHub](https://github.com/MAZiqing/FEDformer) |
+| 💡 Crossformer | 2023 | [Crossformer](https://arxiv.org/abs/2303.05389) | [Crossformer GitHub](https://github.com/Thinklab-SJTU/Crossformer) |
+| 📡 LagLLama | 2023 | [LagLLama](https://arxiv.org/abs/2310.06625) | [Lag-Llama GitHub](https://github.com/microsoft/Lag-Llama
